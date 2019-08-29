@@ -1,20 +1,32 @@
-﻿.pictureofme {
+﻿
+.pictureofme {
     height: 20%;
     width:20%;
 }
 
 #footer {
-    text-align:center;
-    
+    text-align: center;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    border: 5px double black;
+    border-radius: 5px;
 }
+
 
 #footerpicture {
     height:5%;
     width:5%;
 }
 
-#header h1{
+#header h1 {
+    text-align:center;
+}
 
+#header nav {
+    display: inline-block;
+    right:2px;
 }
 
 /* Dropdown Button */
