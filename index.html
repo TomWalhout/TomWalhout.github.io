@@ -2,47 +2,53 @@
 <html>
 
 <head>
-    <!-- TEST-->
     <!-- Title of the webpage as displayed in the tab-->
     <title>Index || Tom Walhout</title>
     <!-- Link to css file-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Mobile users are important too -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Script voor nav -->
+    <script>
+        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
 </head>
 
 <body>
-    <!-- The header, basically the first thing that draws the attention of the visitor -->
-    <header id="header">
-        <nav class="dropdown" id="headernav">
-            <button class="dropbtn">MENU</button>
-            <div class="dropdown-content">
-                <a href="/dashboard.html">Dashboard</a>
-                <a href="/profile.html">About me</a>
-            </div>
-        </nav>
-        <h1 id="name">Tom Walhout</h1>
-        <h3 id="pagename">Index</h3>
-    </header>
-
-    <!-- The body of the page. Everything that contains actual information-->
-    <div id="main">
-        <img src="/img/me.png" class="pictureofme" id="mainpicture" />
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/profile.html">About Me</a>
     </div>
 
-    <!-- Footer, at the bottom, usually contains a few links and or legal info and whatnot-->
-    <footer id="footer">
-        <p>This page was made by Tom Walhout</p>
+    <div id="main">
 
-        <img src="/img/me.png" class="pictureofme" id="footerpicture" />
-        <div>
-            <a href="#header">Back to top</a>
-            <nav id="footernav">
-                <a class="footerlink" href="/profile.html">About me</a>
-                <a class="footerlink" href="/dashboard.html">Dashboard</a>
+        <!-- The header, basically the first thing that draws the attention of the visitor -->
+        <header id="header">
+            <img id="hz" src="/img/hz.png" />
+            <nav id="headernav">
+                <button onclick=openNav()>MENU</button>
             </nav>
+            <h1 id="name">Tom Walhout</h1>
+            <h3 id="pagename">Index</h3>
+        </header>
+
+        <!-- The body of the page. Everything that contains actual information-->
+        <div id="main">
+            <img src="/img/me.png" class="pictureofme" id="mainpicture" />
         </div>
-    </footer>
 </body>
 
 </html>

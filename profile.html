@@ -4,6 +4,22 @@
 <head>
     <title>About Me || Tom Walhout</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Script voor nav -->
+    <script>
+        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
 </head>
 
 <body>
@@ -83,17 +99,7 @@
         </li>
 
     </ul>
-    <!-- Footer, at the bottom, usually contains a few links and or legal info and whatnot-->
-    <footer id="footer">
-        <img src="/img/me.png" class="pictureofme" id="footerpicture" />
-        <div>
-            <a href="#header">Back to top</a>
-            <nav id="footernav">
-                <a class="footerlink" href="/profile.html">About me</a>
-                <a class="footerlink" href="/dashboard.html">Dashboard</a>
-            </nav>
-        </div>
-    </footer>
+
 </body>
 
 </html>
