@@ -5,33 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Dashboard || Tom Walhout</title>
 </head>
 
 <body>
-    <h1>Mijn dashboard</h1>
-
-    <table style="border:dotted black">
+    <h1>My dashboard</h1>
+    <header id="header">
+        <nav class="dropdown" id="headernav">
+            <button class="dropbtn">MENU</button>
+            <div class="dropdown-content">
+                <a href="/profile.html">About me</a>
+                <a href="/">Index</a>
+            </div>
+        </nav>
+    </header>
+    <form class="cijfer" action="InputMark(mark, test)">
+        <input required name="mark" type="text" placeholder="What mark?">
+        <input required name="test" type="text" placeholder="Which test?">
+        <button type="submit">Submit</button>
+    </form>
+    <table>
         <tr>
-            <th>Hoiikbeneentest</th>
+            <th>Cursus</th>
             <th>Toets</th>
             <th>Weging</th>
             <th>EC</th>
+            <th>Cijfer</th>
         </tr>
         <tr>
-            <td>Opleidings- en beroepsori�ntatie</td>
+            <td id="test">Opleidings- en beroepsori�ntatie</td>
             <td>Eindgesprek</td>
             <td>100%</td>
             <td>2.5</td>
+            <td></td>
         </tr>
         <tr>
-            <td>Computer science basics</td>
+            <td id="test">Computer science basics</td>
             <td>Theorietentamen</td>
             <td>100%</td>
             <td>7.5</td>
         </tr>
         <tr>
-            <td>Programming basics</td>
+            <td id="test">Programming basics</td>
             <td>Casustoets</td>
             <td>100%</td>
             <td>5</td>
