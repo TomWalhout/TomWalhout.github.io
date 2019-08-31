@@ -3,34 +3,19 @@
 
 <head>
     <!-- Title of the webpage as displayed in the tab-->
-    <title>Index || Tom Walhout</title>
+    <title>Index | Tom Walhout</title>
     <!-- Link to css file-->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
     <!-- Mobile users are important too -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Script voor nav -->
-    <script>
-        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginRight = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        }
-
-        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginRight = "0";
-            document.body.style.backgroundColor = "white";
-        }
-    </script>
 </head>
 
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/dashboard.html">Dashboard</a>
         <a href="/profile.html">About Me</a>
+        <a href="/dashboard.html">Dashboard</a>
     </div>
 
     <div id="main">
@@ -38,12 +23,13 @@
         <!-- The header, basically the first thing that draws the attention of the visitor -->
         <header id="header">
             <img id="hz" src="/img/hz.png" />
-            <nav id="headernav">
-                <button onclick=openNav()>MENU</button>
-            </nav>
+            <div class="navdiv" id="headernav">
+                <button class="navbtn" onclick=openNav()>MENU</button>
+            </div>
             <h1 id="name">Tom Walhout</h1>
             <h3 id="pagename">Index</h3>
         </header>
+
 
         <!-- The body of the page. Everything that contains actual information-->
         <div id="main">

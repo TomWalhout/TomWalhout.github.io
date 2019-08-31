@@ -2,103 +2,108 @@
 <html>
 
 <head>
-    <title>About Me || Tom Walhout</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- Script voor nav -->
+    <title>About Me | Tom Walhout</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
+    <!-- Mobile users are important too -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        /* Nav Script */
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginRight = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
         }
 
-        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginRight = "0";
-            document.body.style.backgroundColor = "white";
         }
     </script>
 </head>
 
 <body>
-    <!-- The header, basically the first thing that draws the attention of the visitor -->
-    <header id="header">
-        <nav class="dropdown" id="headernav">
-            <button class="dropbtn">MENU</button>
-            <div class="dropdown-content">
-                <a href="/index.html">Index</a>
-                <a href="/dashboard.html">Dashboard</a>
-            </div>
-        </nav>
-        <h1 id="name">Tom Walhout</h1>
-        <h3 id="pagename">About me</h3>
-    </header>
-
-    <div id="photobox">
-        <img id="photoofme" src="/img/photo.png" />
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Index</a>
+        <a href="/dashboard.html">Dashboard</a>
     </div>
 
-    <h1>Information about me:</h1>
-    <p>This is a list of things I like</p>
-    <ul>
-        <li>Games</li>
-        <li>Computers</li>
-        <li>Music</li>
-        <li>Puzzles</li>
-    </ul>
+    <div id="main">
 
-    <p>Here's a list of things I don't like</p>
-    <ol>
-        <li>lists</li>
-        <li>irony</li>
-        <li>
-            <ul>
-                <li>
-                    lists within lists
-                </li>
-                <li>
-                    repetition
-                </li>
-                <li>
-                    repetition
-                </li>
-            </ul>
-        </li>
-    </ol>
-    <p>This is yet another list. This time it's about who I am as a person.</p>
-    <ul>
-        <li>I like to laugh a lot</li>
-        <li>I like puzzles</li>
-        <li>
-            I like coding, these are examples of things my friends and I have made in the past:
-            <ol>
-                <li>
-                    <a class="list" href="/codingprojects.html">
+        <!-- The header, basically the first thing that draws the attention of the visitor -->
+        <header id="header">
+            <img id="hz" src="/img/hz.png" />
+            <div class="navdiv" id="headernav">
+                <button class="navbtn" onclick=openNav()>MENU</button>
+            </div>
+            <h1 id="name">Tom Walhout</h1>
+            <h3 id="pagename">About Me</h3>
+        </header>
+
+
+        <div id="photobox">
+            <img id="photoofme" src="/img/photo.png" />
+        </div>
+
+        <h1>Information about me:</h1>
+        <p>This is a list of things I like</p>
+        <ul>
+            <li>Games</li>
+            <li>Computers</li>
+            <li>Music</li>
+            <li>Puzzles</li>
+        </ul>
+
+        <p>Here's a list of things I don't like</p>
+        <ol>
+            <li>lists</li>
+            <li>irony</li>
+            <li>
+                <ul>
+                    <li>
+                        lists within lists
+                    </li>
+                    <li>
+                        repetition
+                    </li>
+                    <li>
+                        repetition
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p>This is yet another list. This time it's about who I am as a person.</p>
+        <ul>
+            <li>I like to laugh a lot</li>
+            <li>I like puzzles</li>
+            <li>
+                I like coding, these are examples of things my friends and I have made in the past:
+                <ol>
+                    <li>
+                        <a class="list" href="/codingprojects.html">
                        Pong
                     </a>
-                </li>
-                <li>
-                    <a class="list" href="/codingprojects.html">
+                    </li>
+                    <li>
+                        <a class="list" href="/codingprojects.html">
                         Tetris
                     </a>
-                </li>
-                <li>
-                    <a class="list" href="/codingprojects.html">
+                    </li>
+                    <li>
+                        <a class="list" href="/codingprojects.html">
                       Platformer
                     </a>
-                </li>
-                <li>
-                    <a class="list" href="/codingprojects.html">
+                    </li>
+                    <li>
+                        <a class="list" href="/codingprojects.html">
                         Frogger
                     </a>
-                </li>
-            </ol>
+                    </li>
+                </ol>
 
-        </li>
+            </li>
 
-    </ul>
+        </ul>
 
 </body>
 

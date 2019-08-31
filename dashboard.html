@@ -2,22 +2,11 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Dashboard | Tom Walhout</title>
+    <!-- Mobile users are important too -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Dashboard || Tom Walhout</title>
-
-    <script>
-        /* Nav Script */
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginRight = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginRight = "0";
-        }
-    </script>
 </head>
 
 <body>
@@ -32,198 +21,206 @@
         <!-- The header, basically the first thing that draws the attention of the visitor -->
         <header id="header">
             <img id="hz" src="/img/hz.png" />
-            <div class="dropdown" id="headernav">
-                <button class="dropbtn" onclick=openNav()>MENU</button>
+            <div class="navdiv" id="headernav">
+                <button class="navbtn" onclick=openNav()>MENU</button>
             </div>
             <h1 id="name">Tom Walhout</h1>
             <h3 id="pagename">Dashboard</h3>
         </header>
 
-        <div class="subsec">
-            <h3 class="subsectionheader">Overview</h3>
-            <table id="overviewTable">
+
+        <div class="subsec" id="overviewTable">
+            <h3 class="subsectionheader" id="overviewText">Overview</h3>
+            <table>
                 <tr>
                     <th>Cursus</th>
-                    <th>Toets</th>
-                    <th>Weging</th>
+                    <th>Test</th>
+                    <th>Weight</th>
                     <th>EC</th>
-                    <th>Cijfer</th>
+                    <th>Mark</th>
                 </tr>
                 <tr>
                     <td id="test">Opleidings- en beroepsoriëntatie</td>
                     <td>Eindgesprek</td>
                     <td>100%</td>
-                    <td>2.5</td>
-                    <td></td>
+                    <td class="ECs">2.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td id="test">Computer science basics</td>
                     <td>Theorietentamen</td>
                     <td>100%</td>
-                    <td>7.5</td>
-                    <td></td>
+                    <td class="ECs">7.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td id="test">Programming basics</td>
                     <td>Casustoets</td>
                     <td>100%</td>
-                    <td>5</td>
-                    <td></td>
+                    <td class="ECs"></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Professional skills 1</td>
                     <td>Presentatie</td>
                     <td>33%</td>
-                    <td>2.5</td>
-                    <td></td>
+                    <td class="ECs">2.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Verslag</td>
                     <td>33%</td>
                     <td></td>
-                    <td></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Functioneringsgesprek</td>
                     <td>33%</td>
                     <td></td>
-                    <td></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>HZ Personality</td>
                     <td>Portfolio</td>
                     <td>100%</td>
-                    <td>2.5</td>
-                    <td></td>
+                    <td class="ECs">2.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Object-oriented programming</td>
                     <td>Casustoets</td>
                     <td>50%</td>
-                    <td>5</td>
-                    <td></td>
+                    <td class="ECs">5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Object-oriented programming</td>
                     <td>Groepsproject</td>
                     <td>50%</td>
-                    <td>5</td>
-                    <td></td>
+                    <td class="ECs">5</td>
+                    <td class="mark"></td>
                 </tr>
 
                 <tr>
                     <td>Professional skills 2</td>
                     <td>Agile functioneren</td>
                     <td>50%</td>
-                    <td>2.5</td>
-                    <td></td>
+                    <td class="ECs">2.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Engels opdrachten</td>
                     <td>25%</td>
                     <td></td>
-                    <td></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Engels werkstuk</td>
                     <td>25%</td>
                     <td></td>
-                    <td></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Professionele werkplek</td>
                     <td>Eindgesprek</td>
                     <td>100%</td>
-                    <td>2.5</td>
-                    <td></td>
+                    <td class="ECs">2.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Framework development 1</td>
                     <td>Casustoets</td>
                     <td>100%</td>
-                    <td>5</td>
-                    <td></td>
+                    <td class="ECs">5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Framework project 1</td>
                     <td>Requirementsverslag</td>
                     <td>50%</td>
-                    <td>5</td>
-                    <td></td>
+                    <td class="ECs">5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Projectresultaat</td>
                     <td>50%</td>
-                    <td></td>
-                    <td></td>
+                    <td class="ECs"></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Professional skills 3</td>
                     <td>Agile functioneren</td>
                     <td>50%</td>
-                    <td>2.5</td>
-                    <td></td>
+                    <td class="ECs">2.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Engels opdrachten</td>
                     <td>25%</td>
                     <td></td>
-                    <td></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Engels werkstuk</td>
                     <td>25%</td>
                     <td></td>
-                    <td></td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>IT Personality 1</td>
                     <td>Portfolio</td>
                     <td>100%</td>
-                    <td>2.5</td>
-                    <td></td>
+                    <td class="ECs">2.5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Framework development 2</td>
                     <td>Opdrachten</td>
                     <td>100%</td>
-                    <td>5</td>
-                    <td></td>
+                    <td class="ECs">5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td>Framework project 2</td>
                     <td>Code reviews</td>
                     <td>50%</td>
-                    <td>5</td>
-                    <td></td>
+                    <td class="ECs">5</td>
+                    <td class="mark"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Projectresultaat</td>
                     <td>50%</td>
                     <td></td>
-                    <td></td>
+                    <td class="mark"></td>
                 </tr>
             </table>
         </div>
-
         <div class="subsec" id="links">
-            <h3>Useful links</h3>
-            <a href="https://hz.nl/over-de-hz/regelingen-documenten-1/onderwijs-en-examenregelingen">Onderwijs en examenregelingen</a>
-            <a href="http://learn.hz.nl">Learn</a>
-            <a href="https://apps.hz.nl/angular/studievoortgang/studiestatus">Studievoortgang</a>
-            <a href="https://fs.myhz.nl/adfs/ls/?wtrealm=urn%3aIPS-rooster&wctx=WsFedOwinState%3dShVHirrFLeLx_3Y5RpQTV0DAlajQYKc0ZSUomcD2K03ocYcDcaZPXQaLDQYx-8L1jMsl9TD9PYkRUpzMkOk1DwxlQ-kNPie2yrl5ESj75CNe0Lr5PEEqBdrDctuDl8yLn1rm2g0UK0W1c9Whi0HaZA&wa=wsignin1.0">Rooster</a>
-            <a href="https://topdesk.hz.nl/tas/public/ssp/">Selfsevice Portal</a>
-            <a href="https://apps.hz.nl/hzcultapp/default.aspx?menu=026200212058112181071072054036040113016229137043&auth=1">HZ Cult</a>
+            <h3 class="subsectionheader" id="linksheader">Study Guide / Useful links</h3>
+            <p>
+                <a href="https://hz.nl/over-de-hz/regelingen-documenten-1/onderwijs-en-examenregelingen">Onderwijs en examenregelingen</a><br>
+                <a href="http://learn.hz.nl">Learn</a><br>
+                <a href="https://apps.hz.nl/angular/studievoortgang/studiestatus">Studievoortgang</a><br>
+                <a href="https://fs.myhz.nl/adfs/ls/?wtrealm=urn%3aIPS-rooster&wctx=WsFedOwinState%3dShVHirrFLeLx_3Y5RpQTV0DAlajQYKc0ZSUomcD2K03ocYcDcaZPXQaLDQYx-8L1jMsl9TD9PYkRUpzMkOk1DwxlQ-kNPie2yrl5ESj75CNe0Lr5PEEqBdrDctuDl8yLn1rm2g0UK0W1c9Whi0HaZA&wa=wsignin1.0">Rooster</a><br>
+                <a href="https://topdesk.hz.nl/tas/public/ssp/">Selfsevice Portal</a><br>
+                <a href="https://apps.hz.nl/hzcultapp/default.aspx?menu=026200212058112181071072054036040113016229137043&auth=1">HZ Cult</a><br>
+            </p>
+        </div>
+        <div class="subsec" id="Ecs">
+            <h3 id="totalECsHeader"></h3>
         </div>
     </div>
+    <script>
+        checkPass();
+    </script>
 </body>
 
 </html>
