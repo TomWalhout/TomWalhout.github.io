@@ -44,7 +44,8 @@ tr:nth-child(odd) {
 }
 
 #header h1,
-h3 {
+h3,
+h4 {
     text-align: center;
     color: white;
 }
@@ -72,29 +73,15 @@ h3 {
     margin-top: 20px;
     color: white;
     margin-bottom: 20px;
+    width: 49%;
 }
 
 #links {
     float: right;
-    width: 49%;
 }
 
-#links a:visited {
+a {
     color: white;
-}
-
-#links a:hover {
-    color: red;
-}
-
-#overviewTable {
-    float: left;
-    width: 49%;
-}
-
-#Ecs {
-    float: right;
-    width: 49%;
 }
 
 .input-color {
@@ -110,12 +97,10 @@ h3 {
 
 #photobox {
     float: left;
-    width: 49%;
 }
 
 #information {
     float: right;
-    width: 49%;
     text-align: left;
 }
 
@@ -177,35 +162,42 @@ h3 {
     padding-bottom: 8px;
 }
 
-#twitch {
+.socialbutton {
     width: 20%;
     height: 20%;
     text-align: left;
 }
 
 #discord {
-    width: 20%;
-    height: 20%;
-    text-align: left;
     border-radius: 10px;
 }
 
-#social a:visited {
+a:visited {
     color: white;
 }
 
-#social a:hover {
+a:hover {
     color: red;
 }
 
-#Subscribe {
-    float: left;
-    width: 49%;
+.full {
+    width: 100%;
 }
 
-#Persoonlijkheid {
+#UU {
+    width: 10%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
     float: right;
-    width: 49%;
+}
+
+#preproject {
+    padding-bottom: 4px;
 }
 
 #submitbutton {
@@ -222,6 +214,35 @@ h3 {
     width: 90%;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+#progressbar {
+    margin: 10px;
+}
+
+#scammedbody {
+    animation-name: sspin-left;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin-left {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+#genIntro {
+    list-style-position: inside;
+}
+
+h4 {
+    padding-bottom: 0;
+}
+
+video {
+    padding: 20px;
 }
 
 

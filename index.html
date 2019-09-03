@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <!-- Title of the webpage as displayed in the tab-->
     <title>Index | Tom Walhout</title>
-    <!-- Link to css file-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="scripts.js"></script>
 </head>
@@ -12,13 +10,12 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/profile.html">About Me</a>
+        <a href="/profile.html">Profile</a>
         <a href="/dashboard.html">Dashboard</a>
+        <a href="projects.html">Projects</a>
     </div>
 
     <div id="main">
-
-        <!-- The header, basically the first thing that draws the attention of the visitor -->
         <header id="header">
             <img id="hz" src="/img/hz.png" />
             <div class="navdiv" id="headernav">
@@ -27,18 +24,38 @@
             <h1 id="name">Tom Walhout</h1>
             <h3 id="pagename">Index</h3>
         </header>
-        <!-- The body of the page. Everything that contains actual information-->
-        <div id="main">
-            <div class="subsec" id="Subscribe">
-                <form>
-                    <h1>Subscribe to the newsletter</h1>
-                    <input name="email" type="email" required placeholder="email@newsletter.com"><br>
-                    <button id="submitbutton" type="submit">SUBMIT</button>
-                </form>
-            </div>
-            <div class="subsec" id="Persoonlijkheid">
-                <p>Nee</p>
-            </div>
+        <div class="subsec full" id="genIntro">
+            <h3>Hi!</h3>
+            <p>This is a list of information that for once is not presented in a standardized lap of text...</p>
+            <ul>
+                <li>Name: Tom Walhout</li>
+                <li>Date Of Birth: 26-10-1998</li>
+                <li>Place of Residence: Lewedorp</li>
+            </ul>
+        </div>
+        <div class="subsec left" id="HBO">
+            <h3>Why HBO?</h3>
+            <p>The HBO level of education fits me because I have tried studying at Utrecht University last year, but it was just too difficult. I decided to find go study someplace where there's more attention to individuals and more room to have questions
+                answered, and so I found HBO-ICT. I believe this study is much more personal than university, and aimed more practically, which is a welcome change.</p>
+            <br></div>
+        <div class="subsec right" id="ICT">
+            <h3>Why ICT?</h3>
+            <p>I've always been interested in computers. I remember just barely starting high school and already being busy trying to figure out how to write computer programs. <br>Computers are everywhere and they're not going away and time soon. I believe
+                being schooled in ICT is one of, if not the best way to prepare for the future. That's the basic reason I started studying ICT.</p>
+        </div>
+        <div class="subsec left" id="Middelburg">
+            <h3>Why here?</h3>
+            <p>I grew up with my parents in Lewedorp, lived there until I moved to Zeist to study in Utrecht. As mentioned, that didn't work out and I decided to look for a follow-up study a little closer to home. This study offers me the small stap down
+                and the personal guidence I needed while being very close to home.</p><br>
+        </div>
+        <div class="subsec right" id="preproject">
+            <h3>Previous Coding Projects</h3>
+            <p>This is a list of notable things I've coded in the past:</p>
+            <ul>
+                <li><a href="/projects.html#frogger" target="_blank">Frogger, but with voice control</a></li>
+                <li><a href="/projects.html#wh" target="_blank">WorkingHours, which keeps track of... well... the hours I work at my job</a></li>
+                <li><a href="/projects.html#pong" target="_blank">Pong for four</a></li>
+            </ul>
         </div>
 </body>
 

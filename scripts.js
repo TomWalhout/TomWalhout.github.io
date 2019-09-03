@@ -43,7 +43,10 @@ function checkPass() {
     };
     // Display the information in the header
     // Also calc the % I have toward completing 45 ECs and thus not getting a NBSA
-    document.getElementById('totalECsHeader').innerHTML = "Total ECs: " + totalECs + "<br>That's " + Math.round(totalECs / 45 * 100) + "% of BSA";
+    // Also update the progressBar
+    var progress = Math.round(totalECs / 45 * 100);
+    document.getElementById('totalECsHeader').innerHTML = "Total ECs: " + totalECs + "<br>That's " + progress + "% of BSA";
+    document.getElementById('progressbar').value = progress;
 }
 
 function checkWeight(scores, i) {

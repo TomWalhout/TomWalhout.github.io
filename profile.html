@@ -8,24 +8,28 @@
 </head>
 
 <body>
-    <div id="mySidenav" class="sidenav"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;
-</a><a href="/">Index</a><a href="/dashboard.html">Dashboard</a></div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Index</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/projects.html">Projects</a>
+    </div>
     <div id="main">
         <!-- The header, basically the first thing that draws the attention of the visitor -->
         <header id="header"><img id="hz" src="/img/hz.png" />
             <div class="navdiv" id="headernav"><button class="navbtn" onclick=openNav()>MENU</button></div>
             <h1 id="name">Tom Walhout</h1>
-            <h3 id="pagename">About Me</h3>
+            <h3 id="pagename">Profile</h3>
         </header>
-        <div class="subsec" id="photobox">
+        <div class="subsec left">
             <img id="photoofme" alt="My brother, Jesse, and I" src="/img/photo.png" />
             <p>My brother (left) and I at a party, 2019
             </p>
         </div>
         <div class="subsec" id="information">
             <div id="Textbox">
-                <h1 style="text-align: center;">Information about me:</h1>
-                <h3>These are my favorite activities</h3>
+                <h3>Information about me:</h3>
+                <h4>These are my favorite activities</h4>
                 <ul>
                     <li>Music</li>
                     <li>Gaming
@@ -44,18 +48,18 @@
 
         <div class="subsec" id="vertisement">
             <h4>Obligatory advertisement</h4>
-            <a href="https://www.bol.com/nl/p/lego-technic-chevrolet-corvette-zr1-42093/9200000098526669/">
+            <a href="https://www.bol.com/nl/p/lego-technic-chevrolet-corvette-zr1-42093/9200000098526669/" target="_blank">
                 <img id="AD" alt="Much AD, such Bol" src="img/LegoAD.png">
             </a>
         </div>
 
         <div class="subsec" id="social">
-            <a href="https://www.twitch.tv/slythergale">
-                <img id="twitch" src="img/twitch.png" alt="Dont forget to like & subscribe!!!!!!">
+            <a href="https://www.twitch.tv/slythergale" target="_blank">
+                <img class="socialbutton" id="twitch" src="img/twitch.png" alt="Dont forget to like & subscribe!!!!!!">
                 <h5>Watch me fail at video games</h5>
             </a>
-            <a href="https://discord.gg/BFDGdQY">
-                <img id="discord" src="img/discord.png" alt="Discord Link">
+            <a href="https://discord.gg/BFDGdQY" target="_blank">
+                <img class="socialbutton" id="discord" src="img/discord.png" alt="Discord Link">
                 <h5>Talk to me while I fail at video games</h2>
             </a>
         </div>
