@@ -12,7 +12,6 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/profile.html">Profile</a>
         <a href="/dashboard.html">Dashboard</a>
-        <a href="projects.html">Projects</a>
     </div>
 
     <div id="main">
@@ -37,7 +36,8 @@
             <h3>Why HBO?</h3>
             <p>The HBO level of education fits me because I have tried studying at Utrecht University last year, but it was just too difficult. I decided to find go study someplace where there's more attention to individuals and more room to have questions
                 answered, and so I found HBO-ICT. I believe this study is much more personal than university, and aimed more practically, which is a welcome change.</p>
-            <br></div>
+            <br>
+        </div>
         <div class="subsec right" id="ICT">
             <h3>Why ICT?</h3>
             <p>I've always been interested in computers. I remember just barely starting high school and already being busy trying to figure out how to write computer programs. <br>Computers are everywhere and they're not going away and time soon. I believe
@@ -50,13 +50,45 @@
         </div>
         <div class="subsec right" id="preproject">
             <h3>Previous Coding Projects</h3>
-            <p>This is a list of notable things I've coded in the past:</p>
+            <p>This is a list of notable things I've coded in the past, all in C#:</p>
             <ul>
-                <li><a href="/projects.html#frogger" target="_blank">Frogger, but with voice control</a></li>
-                <li><a href="/projects.html#wh" target="_blank">WorkingHours, which keeps track of... well... the hours I work at my job</a></li>
-                <li><a href="/projects.html#pong" target="_blank">Pong for four</a></li>
+                <li><a href="/#frogger">Frogger, but with voice control</a></li>
+                <li><a href="/#wh">WorkingHours, which keeps track of... well... the hours I work at my job</a></li>
+                <li><a href="/#pong">Pong for four</a></li>
             </ul>
         </div>
+        <div class="subsec full" id="frogger">
+            <h3>Frogger</h3>
+            <div class="flex">
+                <video width="320" height="240" id="froggertrailer" controls>
+                    <source src="/img/FroggerTrailer.mp4" type="video/mp4">
+                    </video>
+                <img class="img25" id="froggerTitle" alt="Title Screen for Frogger" src="/img/frogger.png">
+                <p>This is the trailer for "Of Frogs 'n Gods", a game my group made last year, based on frogger. There were seven of us working on it, putting 200 hours each into it over the course of 8 weeks. <br>The idea is to get as far as possible without
+                    touching enemies or the water. The real challenge was adding voice control. We found it didn't work to control the frog due to a significant delay, so instead we adjusted the difficulty based on what the user was saying.</p>
+            </div>
+        </div>
+
+        <div class="subsec full" id="wh">
+            <h3>WorkingHours</h3>
+            <div class="flex">
+                <img class="img40" id="whHours" alt="Overview table in WorkingHours" src="img/whview.png">
+                <img class="img40" id="whEdit" alt="Edit screen in WorkingHours" src="/img/whedit.png">
+                <p>WorkingHours is a quick little console app I wrote that I use to keep track of how many hours I've worked. It's limited in use, but some values like salary can be edited directly in the app. <br>It works by reading and writing timestamps
+                    to a file on my computer. I originally wrote it as practise with read/writing to files and as such it did it's job.
+                </p>
+            </div>
+        </div>
+        <div class="subsec full" id="pong">
+            <h3>Pong</h3>
+            <div class="flex">
+                <img class="img40" id="pong2p" alt="Regular pong" src="img/pong2p.png">
+                <img class="img25" id="pong4p" alt="Pong 4Four" src="/img/pong4p.png">
+                <p>The first project I made in C# (Hello World does not count). It's exactly what it sounds like. It's pong, with an option to play with four people.
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
