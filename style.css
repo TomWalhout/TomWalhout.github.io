@@ -137,11 +137,13 @@ a {
 }
 
 #AD {
-    height: 90%;
-    width: 90%;
+    height: 50%;
+    width: 50%;
     border-radius: 10px;
+    padding-bottom: 80px;
     margin-top: 10px;
     margin-bottom: 1px;
+    animation: spin 3s linear infinite;
 }
 
 #vertisement {
@@ -149,6 +151,15 @@ a {
     width: 24%;
     margin-left: 2px;
     margin-top: 10px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #notanad {
@@ -248,9 +259,6 @@ video {
     width: 49%;
 }
 
-
-/* Menu Button */
-
 .navbtn {
     background-color: rgb(0, 160, 253);
     color: white;
@@ -266,33 +274,18 @@ video {
     margin-top: 25pt;
 }
 
-
-/* The side navigation menu */
-
 .sidenav {
     height: 100%;
-    /* 100% Full-height */
     width: 0;
-    /* 0 width - change this with JavaScript */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Stay on top */
     top: 0;
-    /* Stay at the top */
     right: 0;
     background-color: rgb(0, 81, 145);
-    /* Black*/
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     padding-top: 60px;
-    /* Place content 60px from the top */
     transition: 0.25s;
-    /* 0.5 second transition effect to slide in the sidenav */
 }
-
-
-/* Links in nav */
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
@@ -303,15 +296,9 @@ video {
     transition: 0.25s;
 }
 
-
-/* when hovering over nav links */
-
 .sidenav a:hover {
     color: #fff;
 }
-
-
-/* nav close button */
 
 .sidenav .closebtn {
     position: absolute;
