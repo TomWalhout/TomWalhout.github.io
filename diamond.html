@@ -23,19 +23,32 @@
     </div>
 </body>
 <script>
+    //Create canvas and context
     var canvas = document.getElementById('mycanvas');
     var ctx = canvas.getContext("2d");
 
-
+    //Draw outer square (because it looks better)
     square(w, h);
 
+    //Draw a diamond
     function drawDiamond(w, h) {
+        //Clear the canvas
         ctx.clearRect(0, 0, w, h);
-        diamond(w, h);
+        //Draw a diamond
+        ctx.beginPath();
+        ctx.moveTo(w / 2, 0);
+        ctx.lineTo(w, h / 2);
+        ctx.lineTo(w / 2, h);
+        ctx.lineTo(0, h / 2);
+        ctx.lineTo(w / 2, 0);
+        ctx.stroke();
     }
 
+    //Draw a triangle
     function drawTri(w, h) {
+        //Clear the canvas
         ctx.clearRect(0, 0, w, h);
+        //Draw a triangle
         ctx.beginPath();
         ctx.moveTo(w / 2, 0);
         ctx.lineTo(0, h);
@@ -45,29 +58,22 @@
     }
 
     function drawCircle(w, h) {
+        //Clear the canvas
         ctx.clearRect(0, 0, w, h);
+        //Draw a circle
         ctx.beginPath();
         ctx.arc(w / 2, h / 2, w / 2, 0, 2 * Math.PI);
         ctx.stroke();
     }
 
     function square(w, h) {
+        //Draw a square
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.lineTo(0, h);
         ctx.lineTo(w, h);
         ctx.lineTo(w, 0);
         ctx.lineTo(0, 0);
-        ctx.stroke();
-    }
-
-    function diamond(w, h) {
-        ctx.beginPath();
-        ctx.moveTo(w / 2, 0);
-        ctx.lineTo(w, h / 2);
-        ctx.lineTo(w / 2, h);
-        ctx.lineTo(0, h / 2);
-        ctx.lineTo(w / 2, 0);
         ctx.stroke();
     }
 </script>
