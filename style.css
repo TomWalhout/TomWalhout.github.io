@@ -9,6 +9,10 @@ body {
     padding: 20px;
 }
 
+#mycanvas {
+    margin: 20px;
+}
+
 table {
     border: 1px solid black;
     display: block;
@@ -241,6 +245,10 @@ video {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+}
+
+#buttons {
+    padding: 5px;
 }
 
 .img25 {

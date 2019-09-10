@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Diamond</title>
+</head>
+
+<body>
+    <div>
+        <div class="subsec left">
+            <canvas style="background-color: aqua;" width="500" height="500" id="mycanvas"></canvas>
+        </div>
+        <div class="subsec right" id="buttons">
+
+            <button id="drawButton" class="navbtn" onclick="drawDiamond(500,500)">I am a diamond</button>
+            <button id="drawButton" class="navbtn" onclick="drawCircle(500,500)">I am a circle</button>
+            <button id="drawButton" class="navbtn" onclick="drawTri(500,500)">I am a triangle</button>
+        </div>
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById('mycanvas');
+    var ctx = canvas.getContext("2d");
+
+
+    square(w, h);
+
+    function drawDiamond(w, h) {
+        ctx.clearRect(0, 0, w, h);
+        diamond(w, h);
+    }
+
+    function drawTri(w, h) {
+        ctx.clearRect(0, 0, w, h);
+        ctx.beginPath();
+        ctx.moveTo(w / 2, 0);
+        ctx.lineTo(0, h);
+        ctx.lineTo(w, h);
+        ctx.lineTo(w / 2, 0);
+        ctx.stroke();
+    }
+
+    function drawCircle(w, h) {
+        ctx.clearRect(0, 0, w, h);
+        ctx.beginPath();
+        ctx.arc(w / 2, h / 2, w / 2, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+
+    function square(w, h) {
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, h);
+        ctx.lineTo(w, h);
+        ctx.lineTo(w, 0);
+        ctx.lineTo(0, 0);
+        ctx.stroke();
+    }
+
+    function diamond(w, h) {
+        ctx.beginPath();
+        ctx.moveTo(w / 2, 0);
+        ctx.lineTo(w, h / 2);
+        ctx.lineTo(w / 2, h);
+        ctx.lineTo(0, h / 2);
+        ctx.lineTo(w / 2, 0);
+        ctx.stroke();
+    }
+</script>
+
+</html>
