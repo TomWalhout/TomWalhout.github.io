@@ -31,6 +31,7 @@ for (let i = 0; i < 10; i++) {
 
 //Deze werkt alleen met ints want 100 cases is te veel. 
 //Kijk wat het cijfer is en geef het bijbehoorende resultaat
+//Deze opdracht is onzin om met switch te doen ¯\_(ツ)_/¯
 function switchResult(cijfer) {
     switch (cijfer) {
         case 0:
