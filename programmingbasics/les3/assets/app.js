@@ -14,6 +14,7 @@ function even(getal) {
 
 
 function deleteString(input) {
+    //Find " not" and replace it with nothing, cutting it from the string
     input = input.replace(" not", "");
     console.log(input);
 }
