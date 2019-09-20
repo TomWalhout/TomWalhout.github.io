@@ -240,6 +240,11 @@ video {
     margin: auto 0;
 }
 
+#bronnenlijst {
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
 .flex {
     display: flex;
     flex-wrap: wrap;

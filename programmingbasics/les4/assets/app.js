@@ -6,7 +6,6 @@ for (let i = 0; i < 10; i += 0.1) {
     console.log(`${i} is ${resultCalc(i)}`);
 
 }
-
 //Als het cijfer hoger is dan 9 dan uitmuntend, tussen 7 en 9 dan goed etc...
 function resultCalc(cijfer) {
     if (cijfer >= 9) {
