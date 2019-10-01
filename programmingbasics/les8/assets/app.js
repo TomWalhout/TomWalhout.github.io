@@ -1,32 +1,3 @@
-let me = {
-    name: "Anoniem",
-    age: 3141592,
-    previousDiploma: "VWO",
-    vervoer: {
-        wielen: 2,
-        naam: "Zundapp"
-    },
-    namen: ["Finn de poes", "mama", "papa", "Jesse", "Sanne"],
-
-    vervoerFunction: function(v) {
-        if (v == 0) {
-            return this.vervoer.wielen;
-        } else {
-            return this.vervoer.naam;
-        }
-    }
-};
-
-console.log(`Mijn favoriete vervoersmiddels is de ${me.vervoerFunction(1)} en die heeft ${me.vervoerFunction(0)} wielen.`)
-
-
-
-me.namen.forEach(function(v) {
-    console.log(v);
-});
-
-
-
 //Exercise 1: Lap Rounds
 //The original array
 const lapRound = [55.99, 63.00, 63.01, 54.01, 62.79, 52.88, 53.10, 54.12];
