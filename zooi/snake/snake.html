@@ -11,6 +11,7 @@
             padding: 0;
             margin: 0;
         }
+        
         canvas {
             margin: 20px;
         }
@@ -20,20 +21,20 @@
     <script src="snake.js"></script>
     <script src="fruit.js"></script>
     <link rel="text" href="highscores.txt" />
-    
+
 </head>
 
 <body>
-<div class="subsec right">
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <input type="text" placeholder="enter your name you dimwit" id="name" name="name">
-        <input type="hidden" id="score" name="score"> 
-        <input type="submit" value="Submit">
-    </form>
-    <p id="highscorenow"></p>
-    <p id="scorenow"></p>
-    <p>Highscores:</p>
-    <?php 
+    <div class="subsec right">
+        <form method="POST" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
+            <input type="text" placeholder="enter your name you dimwit" id="name" name="name">
+            <input type="hidden" id="score" name="score">
+            <input type="submit" value="Submit">
+        </form>
+        <p id="highscorenow"></p>
+        <p id="scorenow"></p>
+        <p>Highscores:</p>
+        <!-- 
             //do nothing without a name and a score
             if (!empty($_POST["name"]) && !empty($_POST["score"])) {
                 $name = $_POST["name"];
@@ -56,6 +57,9 @@
         readHighscores();
 
         function testScores($score, $name) {
+            if (strpos($name, ": ") {
+                $name = "An idiot";
+            }
             //the fun bit
             switch ($name) {
                 //I am awesome
@@ -113,9 +117,9 @@
             }
         }
         
-    ?>
-    <p id="list"></p>
-</div>
+    ?> -->
+        <p id="list"></p>
+    </div>
 </body>
 
 </html>
