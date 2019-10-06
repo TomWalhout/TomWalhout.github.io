@@ -10,7 +10,8 @@ function Fruit(x, y) {
         if (snake.x + scl / 2 >= this.x && snake.x + scl / 2 <= this.x + scl && snake.y + scl / 2 >= this.y && snake.y + scl / 2 <= this.y + scl) {
             spawnFruit();
             snake.total++;
-            // snake.tail.push(createVector(snake.x, snake.y));
+            score += 10;
+            document.getElementById('score').value = score;
         }
     }
 }
