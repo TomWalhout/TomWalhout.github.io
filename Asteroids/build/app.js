@@ -350,7 +350,7 @@ class ScoreScreen {
         this.canvas = canvas;
         this.ctx = ctx;
         this.score = score;
-        this.highScores = new Array(new Highscore("Tom", Number.MAX_SAFE_INTEGER), new Highscore("Chris", 10), new Highscore("Loek", -20), new Highscore("Daan", Number.MIN_SAFE_INTEGER));
+        this.highScores = new Array(new Highscore("Tom", Number.MAX_SAFE_INTEGER), new Highscore("Freddie Mercury", Number.MAX_SAFE_INTEGER - 10), new Highscore("Sinterklaas", 2589), new Highscore("Chris", 10), new Highscore("Pascal", 0), new Highscore("Loek", -10));
         if (this.score >= this.highScores[this.highScores.length - 1].score) {
             let name = prompt("YOU GOT A HIGHSCORE!! \nWhat's your name?", "Je moeder");
             this.highScores.push(new Highscore(name, this.score));

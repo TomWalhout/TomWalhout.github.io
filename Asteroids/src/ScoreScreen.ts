@@ -9,9 +9,11 @@ class ScoreScreen {
         this.score = score;
         this.highScores = new Array<Highscore>(
             new Highscore("Tom", Number.MAX_SAFE_INTEGER),
+            new Highscore("Freddie Mercury", Number.MAX_SAFE_INTEGER - 10),
+            new Highscore("Sinterklaas", 2589),
             new Highscore("Chris", 10),
-            new Highscore("Loek", -20),
-            new Highscore("Daan", Number.MIN_SAFE_INTEGER),
+            new Highscore("Pascal", 0),
+            new Highscore("Loek", -10)
         );
         if (this.score >= this.highScores[this.highScores.length - 1].score) {
             let name = prompt("YOU GOT A HIGHSCORE!! \nWhat's your name?", "Je moeder");
