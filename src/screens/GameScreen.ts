@@ -42,7 +42,6 @@ class GameScreen {
      * @param input user input to listen to
      */
     public listen(input: UserInput) {
-
     }
 
     /**
@@ -61,13 +60,12 @@ class GameScreen {
      * Let this screen detect and handle collisions of its objects
      */
     public collide() {
-
     }
 
     public collides(a: Array<number>, b: Array<number>) {
         let xoverlap = false;
         let yoverlap = false;
-        if (a[0] < b[0] && a[1] > b[0]) {
+        if (a[0] <= b[0] && a[1] > b[0]) {
             //there is x-overlap
             xoverlap = true;
         }
@@ -94,7 +92,6 @@ class GameScreen {
      *      can easily call the switchScreen() method if needed.
      */
     public adjust(game: Game) {
-
     }
 
     /**
@@ -104,7 +101,6 @@ class GameScreen {
      * @param ctx the rendering context to draw on
      */
     public draw(ctx: CanvasRenderingContext2D) {
-
     }
 
     /**
@@ -180,9 +176,7 @@ class GameScreen {
         return Math.random() * (max - min) + min;
     }
 
-
     public createHitbox(left: number, right: number, up: number, down: number) {
         return [left, right, up, down];
     }
-
 }

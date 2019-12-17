@@ -15,16 +15,16 @@ class Boss extends GameObject {
     }
 
     public update() {
+        // vibrate threateningly
         this.vel.x = Math.random() - .5;
         this.vel.y = Math.random() - .5;
+
         if (this.currentAttack) {
-            let inList = false;
             this.currentAttack.forEach(element => {
                 element.update();
             });
         }
         super.update();
-        this.drawBox();
     }
 
     private Attack() {
@@ -34,6 +34,7 @@ class Boss extends GameObject {
             case 0:
                 this.currentAttack = new Array;
                 for (let i = 1; i < 8; i++) {
+                    console.log("apoejrgiajerg");
                     this.currentAttack[i] = new Codebeam(new Vector(i * 100, 0), new Vector(0, .1 * i * Math.random()), this.ctx);
                 }
                 break;
@@ -45,4 +46,7 @@ class Boss extends GameObject {
         }
     }
 
+    public get attack(): GameObject {
+        return this.currentAttack[0];
+    }
 }

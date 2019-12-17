@@ -2,13 +2,14 @@
 
 class Program extends GameObject {
     private closeButton: CloseButton;
-    private open: boolean;
+    protected open: boolean;
     protected ctx: CanvasRenderingContext2D;
-    public constructor(pos: Vector, vel: Vector, ctx: CanvasRenderingContext2D, path: string, frames: number, speed: number, scale: number) {
-        super(pos, vel, ctx, path, frames, speed, scale)
-        // console.log(this.animation.imageWidth);
-        this.open = true;
+    private ads: boolean;
+    public constructor(pos: Vector, vel: Vector, ctx: CanvasRenderingContext2D, path: string, frames: number, speed: number, scale: number, story: number) {
+        super(pos, vel, ctx, path, frames, speed, scale, story);
+        this.open = false;
         this.ctx = ctx;
+        this.ads = false;
     }
 
     private wait() {
@@ -16,7 +17,9 @@ class Program extends GameObject {
             this.setCloseButton();
         }
     }
+
     private setCloseButton() {
+        // console.log(this.animation.imageWidth);
         this.closeButton = new CloseButton(
             new Vector(this.pos.x + this.animation.imageWidth * this.scale - 30, this.pos.y),
             new Vector(0, 0),
@@ -27,10 +30,12 @@ class Program extends GameObject {
             0.5
         )
     }
+
     public update() {
         this.wait();
         super.update();
     }
+
     public get isOpen(): boolean {
         return this.open;
     }
@@ -42,6 +47,20 @@ class Program extends GameObject {
     public get button(): CloseButton {
         return this.closeButton;
     }
+
+    public get hasAds(): boolean {
+        return this.ads;
+    }
+
+
+    public set hasAds(v: boolean) {
+        this.ads = v;
+    }
+
+    public get storyFlag(): number {
+        return this.story;
+    }
+
 }
 
 //This is a small empty subclass, placing it here is fine

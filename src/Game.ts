@@ -6,17 +6,19 @@ class Game {
     public readonly input: UserInput;
 
     private currentScreen: GameScreen;
+    public Lives: number;
 
     public constructor(canvasId: HTMLCanvasElement) {
         // Construct all of the canvas
         this.canvas = canvasId;
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        this.canvas.width = 1536;
+        this.canvas.height = 722;
         document.documentElement.style.overflow = 'hidden';
         // Set the context of the canvas
         this.ctx = this.canvas.getContext("2d");
-        this.currentScreen = new LevelScreen(this);
+        this.currentScreen = new Level1(this); // Level the game starts on
         this.input = new UserInput();
+        this.Lives = 5;
         this.loop();
     }
 
@@ -25,17 +27,20 @@ class Game {
         // Increase the frame counter
         this.currentScreen.increaseFrameCounter();
 
-        // Let the current screen listen to the user input
-
         // Let the current screen move its objects around the canvas
         this.currentScreen.move(this.canvas);
 
-        this.currentScreen.listen(this.input);
+        // Let the current screen handle collisions
         this.currentScreen.collide();
+
+        //clear the current screen
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Let the current screen draw itself on the rendering context
         this.currentScreen.draw(this.ctx);
+
+        // Let the current screen listen to the user input
+        this.currentScreen.listen(this.input);
 
         requestAnimationFrame(this.loop);
 
@@ -43,13 +48,15 @@ class Game {
         this.currentScreen.adjust(this);
 
         // switch screen
-        if (this.input.isKeyDown(UserInput.KEY_1)) {
-            this.switchScreen(new LevelScreen(this))
+        if (this.input.isKeyDown(UserInput.KEY_1) && !(this.currentScreen instanceof Level1)) {
+            this.switchScreen(new Level1(this))
         }
-        if (this.input.isKeyDown(UserInput.KEY_2)) {
-            this.switchScreen(new BossScreen(this))
+        if (this.input.isKeyDown(UserInput.KEY_2) && !(this.currentScreen instanceof Level2)) {
+            this.switchScreen(new Level2(this))
         }
-
+        if (this.input.isKeyDown(UserInput.KEY_3) && !(this.currentScreen instanceof Level3)) {
+            this.switchScreen(new Level3(this))
+        }
     }
 
     /**
@@ -91,6 +98,14 @@ class Game {
         if (newScreen != this.currentScreen) {
             this.currentScreen = newScreen;
         }
+    }
+
+    public get lives(): number {
+        return this.Lives;
+    }
+
+    public set lives(v: number) {
+        this.Lives = v;
     }
 }
 

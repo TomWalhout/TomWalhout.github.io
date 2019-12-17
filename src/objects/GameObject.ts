@@ -3,14 +3,15 @@ class GameObject {
     protected velocity: Vector;
     protected animation: Animate;
     protected ctx: CanvasRenderingContext2D;
-    private classname: string;
-    private exist: boolean;
+    private exists: boolean;
     protected scale: number;
-    constructor(pos: Vector, vel: Vector, ctx: CanvasRenderingContext2D, path?: string, frames: number = 1, speed: number = 1, scale: number = 1) {
+    private Story: number;
+    constructor(pos: Vector, vel: Vector, ctx: CanvasRenderingContext2D, path?: string, frames: number = 1, speed: number = 1, scale: number = 1, story: number = 0) {
         this.position = pos;
         this.velocity = vel;
-        this.exist = true;
+        this.exists = true;
         this.scale = scale;
+        this.Story = story;
         if (path) {
             this.animation = new Animate(ctx, path, frames, speed, this, scale);
         } else {
@@ -21,6 +22,7 @@ class GameObject {
     public get pos(): Vector {
         return this.position
     }
+
     public set pos(value: Vector) {
         this.position = value;
     }
@@ -28,8 +30,13 @@ class GameObject {
     public get vel(): Vector {
         return this.velocity
     }
+
     public set vel(value: Vector) {
         this.velocity = value;
+    }
+
+    public get story(): number {
+        return this.Story;
     }
 
     public update() {
@@ -55,7 +62,6 @@ class GameObject {
     public box(): Array<number> {
         return [this.pos.x, this.pos.x + this.animation.imageWidth * this.scale, this.pos.y, this.pos.y + this.animation.imageHeight * this.scale];
     }
-
 
     //FOR TESTING ONLY
     public drawBox() {
@@ -85,5 +91,14 @@ class GameObject {
             }
         }
         return false;
+    }
+
+
+    public get exist(): boolean {
+        return this.exists;
+    }
+
+    public set exist(v: boolean) {
+        this.exists = v;
     }
 }
