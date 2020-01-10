@@ -7,18 +7,26 @@ class Game {
 
     private currentScreen: GameScreen;
     public Lives: number;
+    private squaryString: string;
+    private playerInfo: Array<string>;
+    private squaryBody: string;
 
     public constructor(canvasId: HTMLCanvasElement) {
         // Construct all of the canvas
         this.canvas = canvasId;
-        this.canvas.width = 1536;
-        this.canvas.height = 722;
+        this.canvas.width = 1366;
+        this.canvas.height = 768;
         document.documentElement.style.overflow = 'hidden';
         // Set the context of the canvas
         this.ctx = this.canvas.getContext("2d");
-        this.currentScreen = new Level1(this); // Level the game starts on
+        this.squaryString = "./assets/squaryArmy/face/happyBlue.png";
+        this.squaryBody = "./assets/squaryArmy/body/squaryBlue.png";
+        this.currentScreen = new HomeScreen(this); // Level the game starts on
         this.input = new UserInput();
         this.Lives = 5;
+        this.playerInfo = [];
+        this.playerInfo[0] = "Squary";
+        this.playerInfo[1] = "12";
         this.loop();
     }
 
@@ -46,16 +54,27 @@ class Game {
 
         // Let the current screen adjust itself
         this.currentScreen.adjust(this);
-
-        // switch screen
-        if (this.input.isKeyDown(UserInput.KEY_1) && !(this.currentScreen instanceof Level1)) {
-            this.switchScreen(new Level1(this))
+        
+        if (this.userInput.isKeyDown(UserInput.KEY_1)) {
+            this.switchScreen(new Level1(this));
         }
-        if (this.input.isKeyDown(UserInput.KEY_2) && !(this.currentScreen instanceof Level2)) {
-            this.switchScreen(new Level2(this))
+        if (this.userInput.isKeyDown(UserInput.KEY_2)) {
+            this.switchScreen(new Level2(this));
         }
-        if (this.input.isKeyDown(UserInput.KEY_3) && !(this.currentScreen instanceof Level3)) {
-            this.switchScreen(new Level3(this))
+        if (this.userInput.isKeyDown(UserInput.KEY_3)) {
+            this.switchScreen(new Level3(this));
+        }
+        if (this.userInput.isKeyDown(UserInput.KEY_4)) {
+            this.switchScreen(new Level4(this));
+        }
+        if (this.userInput.isKeyDown(UserInput.KEY_5)) {
+            this.switchScreen(new BossScreen(this));
+        }
+        if (this.userInput.isKeyDown(UserInput.KEY_6)) {
+            this.switchScreen(new DeathScreen(this));
+        }
+        if (this.userInput.isKeyDown(UserInput.KEY_7)) {
+            this.switchScreen(new WinScreen(this));
         }
     }
 
@@ -106,6 +125,33 @@ class Game {
 
     public set lives(v: number) {
         this.Lives = v;
+    }
+    public get squary(): string {
+        return this.squaryString;
+    }
+
+    public set squary(v: string) {
+        this.squaryString = v;
+    }
+
+    public get userInput(): UserInput {
+        return this.input;
+    }
+
+    public get playerinfo(): Array<string> {
+        return this.playerInfo;
+    }
+
+    // public set playername(v: string) {
+    //     this.playerName = v;
+    // }
+
+    public get bodySquary(): string {
+        return this.squaryBody;
+    }
+
+    public set bodySquary(v: string) {
+        this.squaryBody = v;
     }
 }
 

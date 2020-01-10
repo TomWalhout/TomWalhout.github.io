@@ -3,20 +3,34 @@
 class Player extends GameObject {
 
     private UserInput: UserInput;
-    public hasSword: boolean;
     protected scale: number;
     protected standsOnGround: boolean;
+    private faceAnimation: Animate;
+    private walljumpTrigger: boolean;
+    private walljumpCooldown: number;
+    private walljumpUsed: boolean;
 
-    public constructor(pos: Vector, vel: Vector, ctx: CanvasRenderingContext2D, path: string, frames: number, speed: number, scale: number) {
+    public constructor(pos: Vector, vel: Vector, ctx: CanvasRenderingContext2D, path: string, frames: number, speed: number, scale: number, body: string) {
+        //Disable this next line for selection
+        // path = "./assets/squary.png";
         super(pos, vel, ctx, path, frames, speed, scale)
+        this.faceAnimation = new Animate(ctx, body, 1, 1, this, 1);
         this.UserInput = new UserInput;
-        this.hasSword = false;
         this.scale = scale
         this.standsOnGround = false;
+        this.walljumpTrigger = false;
+    }
+
+    public update() {
+        if (this.faceAnimation) {
+            this.faceAnimation.draw();
+        }
+        super.update();
+        this.walljumpCd();
     }
 
     public playerMove(canvas: HTMLCanvasElement) {
-
+        
         // Walk
         if (this.UserInput.isKeyDown(UserInput.KEY_RIGHT) && (this.pos.x + (this.animation.imageWidth * this.scale)) < canvas.width) {
             this.pos.x += 5
@@ -27,9 +41,9 @@ class Player extends GameObject {
         }
 
         // Gravity + floor
-        if (this.pos.y + (this.animation.imageHeight * this.scale) >= canvas.height) {
+        if (this.pos.y + (this.animation.imageHeight * this.scale) >= canvas.height - 45) { // 45 is de balk aan de onderkant van het scherm
             this.vel.y = 0
-            this.pos.y = canvas.height - this.animation.imageHeight * this.scale
+            this.pos.y = canvas.height - 45 - this.animation.imageHeight * this.scale
             this.standsOnGround = true;
         } else if (!this.standsOnGround) {
             this.vel.y += 0.15
@@ -39,22 +53,34 @@ class Player extends GameObject {
 
         // Jump
         if (this.UserInput.isKeyDown(UserInput.KEY_UP) && this.standing) {
-            this.vel.y -= 12;
+            this.vel.y -= 8;
             this.standing = false;
         }
 
-        // Attack
-        if (this.hasSword == true && this.UserInput.isKeyDown(UserInput.KEY_SPACE)) {
-            console.log('Hiyaa!');
+        //wall jump
+        if (this.UserInput.isKeyDown(UserInput.KEY_UP) && !this.walljumpUsed && !this.walljumpTrigger && (this.pos.x < 2 || this.pos.x + this.animation.imageWidth > 1364)) {
+            this.vel.y = -8;
+            this.standing = false;
+            this.walljumpTrigger = true;
+            this.walljumpUsed = true;
         }
 
-        // test
-        if (this.UserInput.isKeyDown(UserInput.KEY_ENTER) && this.hasSword == false) {
-            console.log('tadadADADAAAAAA')
-            this.hasSword = true;
+        //wall jump cooldown
+        if (this.standing) {
+            this.walljumpTrigger = true;
+            this.walljumpCooldown = 20;
+            this.walljumpUsed = false;
         }
-        //  console.log(this.standsOnGround) 
-        //  console.log(this.vel.y);
+    }
+
+    // functie cooldown wall jump
+    public walljumpCd() {
+        if (!this.standing) {
+            this.walljumpCooldown--
+        }
+        if (this.walljumpCooldown <= 0) {
+            this.walljumpTrigger = false
+        }
     }
 
     public get standing(): boolean {
