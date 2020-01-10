@@ -159,7 +159,7 @@ class LevelScreen extends GameScreen {
         // lines is an array with all the strings
         let lines = str.split('\n');
 
-        // loop over all the strings and write each string a number of lineheights under eacht oter 
+        // loop over all the strings and write each string a number of lineheights under each oter 
         for (let j = 0; j < lines.length; j++) {
             ctx.fillText(lines[j], xPos, yPos + (j * lineheight));
         }
