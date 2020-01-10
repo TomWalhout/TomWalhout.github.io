@@ -503,7 +503,7 @@ class Boss extends GameObject {
     popUpOfDeath() {
         this.attackLimit = 500;
         for (let i = 0; i < 3; i++) {
-            this.currentAttack[i] = new BossAD(new Vector(this.pos.x + 75, this.pos.y + 75), new Vector(0, 0), this.ctx, "./assets/textboxAndAds/ad1.png", 1, 1, 1, this.screen, true);
+            this.currentAttack[i] = new BossAD(new Vector(this.pos.x + 75, this.pos.y + 75), new Vector(0, 0), this.ctx, `./assets/textboxAndAds/box${Math.floor(Math.random() * 3 + 1)}.png`, 1, 1, 1, this.screen, true);
         }
     }
     get Attack() {
@@ -999,7 +999,7 @@ class BossScreen extends LevelScreen {
         if (!this.waveSpawned) {
             this.waveSpawned = true;
             for (let i = 0; i < 3; i++) {
-                this.tutorialEnemies[i] = new BossAD(new Vector(i * 150 + 450, -10), new Vector(0, 6), this.game.ctx, "./assets/textboxAndAds/ad1.png", 1, 1, 1, this, false);
+                this.tutorialEnemies[i] = new BossAD(new Vector(i * 150 + 450, -10), new Vector(0, 6), this.game.ctx, `./assets/textboxAndAds/box${Math.floor(Math.random() * 3 + 1)}.png`, 1, 1, 1, this, false);
             }
         }
         this.platformTimer++;
@@ -1140,7 +1140,7 @@ class Level1 extends LevelScreen {
         this.icons[2] = new Icon(new Vector(100, 100), new Vector(0, 0), this.game.ctx, './assets/icons/pijl.png', 5, 10, 1.4, 1);
         this.icons[3] = new Icon(new Vector(0, 0), new Vector(0, 0), this.game.ctx, '', 1, 1, 1.4, 1);
         this.programs[0] = new Program(new Vector(100, 300), new Vector(0, 0), this.game.ctx, './assets/programs/Glooole.png', 1, 1, 0.4, 1);
-        this.programs[1] = new Program(new Vector(400, 500), new Vector(0, 0), this.game.ctx, './assets/windows/Word.png', 1, 1, 0.7, 0);
+        this.programs[1] = new Program(new Vector(400, 500), new Vector(0, 0), this.game.ctx, './assets/windows/WORD.png', 1, 1, 0.7, 0);
         this.programs[2] = new Program(new Vector(800, 300), new Vector(0, 0), this.game.ctx, '', 1, 1, 0.6, 0);
         this.programs[3] = new Program(new Vector(800, 300), new Vector(0, 0), this.game.ctx, '', 1, 1, 0.6, 0);
         this.wizard = new Wizard(new Vector(this.game.canvas.width - 275, this.game.canvas.height - 150), new Vector(0, 0), this.game.ctx, './assets/enemiesAndAllies/urawizardgandalf.png', 6, 20, 1);
@@ -1213,9 +1213,9 @@ class Level2 extends LevelScreen {
         this.textXPos = 175;
         this.textYPos = 220;
         const adsFileNames = [
-            './assets/textboxAndAds/ad1.png',
-            './assets/textboxAndAds/ad2.png',
-            './assets/textboxAndAds/ad3.png',
+            './assets/textboxAndAds/box1.png',
+            './assets/textboxAndAds/box2.png',
+            './assets/textboxAndAds/box3.png',
         ];
         for (let i = 0; i < this.randomRoundedNumber(5, 7); i++) {
             const randonmIndex = this.randomRoundedNumber(0, adsFileNames.length);

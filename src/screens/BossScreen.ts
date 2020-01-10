@@ -111,7 +111,7 @@ class BossScreen extends LevelScreen {
         if (!this.waveSpawned) {
             this.waveSpawned = true;
             for (let i = 0; i < 3; i++) {
-                this.tutorialEnemies[i] = new BossAD(new Vector(i * 150 + 450, - 10), new Vector(0, 6), this.game.ctx, "./assets/textboxAndAds/ad1.png", 1, 1, 1, this, false);
+                this.tutorialEnemies[i] = new BossAD(new Vector(i * 150 + 450, - 10), new Vector(0, 6), this.game.ctx, `./assets/textboxAndAds/box${Math.floor(Math.random()*3+1)}.png`, 1, 1, 1, this, false);
             }
         }
 

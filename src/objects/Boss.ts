@@ -115,7 +115,7 @@ class Boss extends GameObject {
     private popUpOfDeath() {
         this.attackLimit = 500;
         for (let i = 0; i < 3; i++) {
-            this.currentAttack[i] = new BossAD(new Vector(this.pos.x + 75, this.pos.y + 75), new Vector(0, 0), this.ctx, "./assets/textboxAndAds/ad1.png", 1, 1, 1, this.screen, true);
+            this.currentAttack[i] = new BossAD(new Vector(this.pos.x + 75, this.pos.y + 75), new Vector(0, 0), this.ctx, `./assets/textboxAndAds/box${Math.floor(Math.random()*3+1)}.png`, 1, 1, 1, this.screen, true);
         }
     }
 

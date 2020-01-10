@@ -26,9 +26,9 @@ class Level2 extends LevelScreen {
         this.textYPos = 220;
 
         const adsFileNames: string[] = [
-            './assets/textboxAndAds/ad1.png',
-            './assets/textboxAndAds/ad2.png',
-            './assets/textboxAndAds/ad3.png',
+            './assets/textboxAndAds/box1.png',
+            './assets/textboxAndAds/box2.png',
+            './assets/textboxAndAds/box3.png',
         ]
 
         for (let i = 0; i < this.randomRoundedNumber(5, 7); i++) {
